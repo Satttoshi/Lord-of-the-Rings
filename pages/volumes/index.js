@@ -1,7 +1,17 @@
 import { introduction, volumes } from "../../lib/data";
 import Link from "next/link";
+import { useRouter } from "next/router";
+
+function getRandomElement(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
 
 export default function VolumePage() {
+  const router = useRouter();
+
+  const randomMovie = getRandomElement(volumes); // randomize movie list
+  console.log(randomMovie);
+
   return (
     <div>
       <h1>Lord of the Rings</h1>
@@ -16,6 +26,14 @@ export default function VolumePage() {
           );
         })}
       </ul>
+      <button
+        type="button"
+        onClick={() => {
+          router.push("/volumes/" + randomMovie.slug);
+        }}
+      >
+        Random Movie
+      </button>
     </div>
   );
 }
