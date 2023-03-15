@@ -7,11 +7,12 @@ export default function Volume1Page() {
   const { movieSlug } = router.query;
 
   const currentVolume = volumes.find(({ slug }) => slug === movieSlug);
-  const { title, description, cover, books } = currentVolume;
 
   if (!currentVolume) {
     return null;
   }
+
+  const { title, description, cover, books } = currentVolume;
 
   return (
     <div>

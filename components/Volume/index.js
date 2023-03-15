@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export default function Volume({ title, description, imageLink, books }) {
-  console.log(books);
   return (
     <div>
       <h1>{title}</h1>
