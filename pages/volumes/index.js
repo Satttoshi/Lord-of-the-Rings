@@ -1,6 +1,7 @@
 import { introduction, volumes } from "../../lib/data";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { uid } from "uid";
 
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -17,9 +18,9 @@ export default function VolumePage() {
       <p>{introduction}</p>
       <h2>All Volumes</h2>
       <ul>
-        {volumes.map((volume, index) => {
+        {volumes.map((volume) => {
           return (
-            <li key={index}>
+            <li key={uid()}>
               <Link href={"/volumes/" + volume.slug}>{volume.slug}</Link>
             </li>
           );

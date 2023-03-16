@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { uid } from "uid";
 
 export default function Volume({
   title,
@@ -24,9 +25,9 @@ export default function Volume({
       <h1>{title}</h1>
       <p>{description}</p>
 
-      {books.map((book, index) => {
+      {books.map((book) => {
         return (
-          <ul key={index}>
+          <ul key={uid()}>
             <li>{book.ordinal}</li>
             <li>{book.title}</li>
           </ul>
