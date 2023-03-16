@@ -2,6 +2,8 @@ import { volumes } from "../../lib/data";
 import Volume from "../../components/Volume";
 import { useRouter } from "next/router";
 
+import styled, { css } from "styled-components";
+
 export default function Volume1Page() {
   const router = useRouter();
   const { movieSlug } = router.query;
@@ -12,10 +14,12 @@ export default function Volume1Page() {
     return null;
   }
 
-  const { title, description, cover, books, next, prev } = currentVolume;
+  const { title, description, cover, books, next, prev, color } = currentVolume;
+
+  console.log(color);
 
   return (
-    <div>
+    <StyledBackground color={color}>
       <Volume
         title={title}
         description={description}
@@ -24,6 +28,10 @@ export default function Volume1Page() {
         prev={prev}
         next={next}
       />
-    </div>
+    </StyledBackground>
   );
 }
+
+const StyledBackground = styled.div`
+  background-color: ${({ color }) => color};
+`;

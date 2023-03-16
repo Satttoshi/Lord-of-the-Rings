@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { Lora } from "@next/font/google";
 
 export default createGlobalStyle`
   *,
