@@ -10,7 +10,6 @@ export default function VolumePage() {
   const router = useRouter();
 
   const randomMovie = getRandomElement(volumes); // randomize movie list
-  console.log(randomMovie);
 
   return (
     <div>

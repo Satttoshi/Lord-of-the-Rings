@@ -6,13 +6,13 @@ export default function Volume1Page() {
   const router = useRouter();
   const { movieSlug } = router.query;
 
-  const currentVolume = volumes.find(({ slug }) => slug === movieSlug);
+  const currentVolume = volumes.find(({ slug }) => slug === movieSlug); //filter with slug and make site rendering dependand on that
 
   if (!currentVolume) {
     return null;
   }
 
-  const { title, description, cover, books } = currentVolume;
+  const { title, description, cover, books, next, prev } = currentVolume;
 
   return (
     <div>
@@ -21,6 +21,8 @@ export default function Volume1Page() {
         description={description}
         imageLink={cover}
         books={books}
+        prev={prev}
+        next={next}
       />
     </div>
   );
