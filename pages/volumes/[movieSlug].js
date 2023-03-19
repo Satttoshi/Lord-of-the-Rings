@@ -14,8 +14,6 @@ export default function Volume1Page() {
 
   const { title, description, cover, books, next, prev, color } = currentVolume;
 
-  console.log(color);
-
   return (
     <Volume
       title={title}

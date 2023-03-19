@@ -103,14 +103,14 @@ const StyledNavButton = styled.button`
   align-items: center;
   gap: 10px;
 
-  p.prev {
+  figure.prev {
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
-  p.next {
+  figure.next {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -185,13 +185,7 @@ export default function Volume({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path
-            d="M15 18L9 12L15 6"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
+          <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" />
         </svg>
         <span className="button__text">All Volumes</span>
       </StyledButton>
@@ -230,25 +224,17 @@ export default function Volume({
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M19 12H5"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+              <path d="M19 12H5" stroke="currentColor" strokeWidth="2" />
               <path
                 d="M12 19L5 12L12 5"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
               />
             </svg>
-            <p className="prev">
+            <figure className="prev">
               <span>Previous Volume</span>
               <h3>{slugToTitle(prev)}</h3>
-            </p>
+            </figure>
           </StyledNavButton>
         ) : null}
 
@@ -260,10 +246,10 @@ export default function Volume({
               router.push("/volumes/" + next);
             }}
           >
-            <p className="next">
+            <figure className="next">
               <span>Next Volume</span>
               <h3>{slugToTitle(next)}</h3>
-            </p>
+            </figure>
             <svg
               className="button__arrowright"
               width="24"
@@ -272,19 +258,11 @@ export default function Volume({
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M5 12H19"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+              <path d="M5 12H19" stroke="currentColor" strokeWidth="2" />
               <path
                 d="M12 5L19 12L12 19"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
               />
             </svg>
           </StyledNavButton>

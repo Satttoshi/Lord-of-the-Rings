@@ -6,7 +6,7 @@ const lora = Lora({
   style: ["normal", "italic"],
 });
 
-const theme = {
+const themeLight = {
   color1: "#282828",
   color2: "#f1f1f1",
   color3: "#d4d1cd",
@@ -28,8 +28,10 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: ${({ darkMode }) =>
-      darkMode ? themeDark.color2 : theme.color2};
+    background-color: ${(props) =>
+      props.darkMode
+        ? props.theme.themeDark.color2
+        : props.theme.themeLight.color2};
     margin: 0;
     font-family: var(--font-family);
     transition: background-color 0.3s ease-out;
@@ -38,11 +40,11 @@ export default createGlobalStyle`
   :root {
   /* Color styles */
   --color-earth: ${({ darkMode }) =>
-    darkMode ? themeDark.color1 : theme.color1};
+    darkMode ? themeDark.color1 : themeLight.color1};
   --color-clouds: ${({ darkMode }) =>
-    darkMode ? themeDark.color2 : theme.color2};
+    darkMode ? themeDark.color2 : themeLight.color2};
   --color-smoke: ${({ darkMode }) =>
-    darkMode ? themeDark.color3 : theme.color3};
+    darkMode ? themeDark.color3 : themeLight.color3};
 
   /* Font styles */
   --font-family: ${lora.style.fontFamily}, serif;
