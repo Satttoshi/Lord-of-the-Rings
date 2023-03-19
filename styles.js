@@ -27,24 +27,11 @@ export default createGlobalStyle`
     
   }
 
-  body {
-    background-color: ${(props) =>
-      props.darkMode
-        ? props.theme.themeDark.color2
-        : props.theme.themeLight.color2};
-    margin: 0;
-    font-family: var(--font-family);
-    transition: background-color 0.3s ease-out;
-  }
-
   :root {
   /* Color styles */
-  --color-earth: ${({ darkMode }) =>
-    darkMode ? themeDark.color1 : themeLight.color1};
-  --color-clouds: ${({ darkMode }) =>
-    darkMode ? themeDark.color2 : themeLight.color2};
-  --color-smoke: ${({ darkMode }) =>
-    darkMode ? themeDark.color3 : themeLight.color3};
+  --color-earth: ${() => themeLight.color1};
+  --color-clouds: ${() => themeLight.color2};
+  --color-smoke: ${() => themeLight.color3};
 
   /* Font styles */
   --font-family: ${lora.style.fontFamily}, serif;
@@ -71,5 +58,26 @@ export default createGlobalStyle`
   --box-shadow-book--hover: 0 6px 11px -2px rgba(0, 0, 0, 0.12),
     0 8px 7px -4px rgba(0, 0, 0, 0.09), 0 17px 11px -8px rgba(0, 0, 0, 0.09),
     0 24px 15px -12px rgba(0, 0, 0, 0.09), 0 4px 15px 0 rgba(0, 0, 0, 0.05);
+
+    body{
+      background-color: var(--color-clouds);
+    }
 }
+
+[data-theme="dark"] {
+  --color-earth: ${() => themeDark.color1};
+  --color-clouds: ${() => themeDark.color2};
+  --color-smoke: ${() => themeDark.color3};
+  body{
+      background-color: var(--color-clouds);
+    }
+}
+
+body{
+      margin: 0;
+      font-family: var(--font-family);
+      transition: background-color 0.3s ease-out;
+    }
+
+
 `;

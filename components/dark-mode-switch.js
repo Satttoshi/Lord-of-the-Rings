@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { useTheme } from "next-themes";
 
 const StyledButton = styled.button`
   appearance: none;
@@ -33,11 +34,14 @@ const StyledSvg = styled.svg`
 `;
 
 export default function DarkModeSwitch({ onDarkMode, darkMode }) {
+  const { theme, resolvedTheme, setTheme } = useTheme();
+
   return (
     <StyledButton
       type="button"
       onClick={() => {
         onDarkMode();
+        setTheme(resolvedTheme === "light" ? "dark" : "light");
       }}
     >
       {!darkMode ? (
