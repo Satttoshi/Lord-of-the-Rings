@@ -10,12 +10,17 @@ const StyledButton = styled.button`
   border: none;
   background-color: transparent;
   outline: none;
+  color: var(--color-earth);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3px;
-  margin: 40px 0 15px 30px;
+  margin: 0 0 15px 30px;
+
+  & .button__text {
+    font: var(--font-body);
+  }
 
   &:hover .button__chevron {
     animation: bounce 0.5s ease-in infinite alternate;
@@ -43,12 +48,13 @@ const StyledArticle = styled.article`
 
   h1 {
     margin: 0;
-    font-size: 2.5rem;
+    font: var(--font-headline-1);
     line-height: 1.1;
   }
 
   p {
     margin: 15px 0px 25px 0px;
+    font: var(--font-body);
   }
 `;
 
@@ -58,13 +64,13 @@ const StyledList = styled.li`
 
   span {
     color: var(--color-smoke);
-    font-size: 0.8rem;
+    font: var(--font-caption--italic);
   }
 
   h2 {
-    color: var(--color-clouds);
+    color: var(--color-smoke);
     margin: 5px 0px;
-    font-size: 1rem;
+    font: var(--font-title);
   }
 `;
 
@@ -94,21 +100,27 @@ const StyledNavButton = styled.button`
   align-items: center;
   gap: 10px;
 
-  p {
-    font-size: 0.8rem;
+  p.prev {
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
 
+  p.next {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
   span {
-    font-style: oblique;
+    font: var(--font-caption--italic);
   }
 
   h3 {
-    font-size: 0.75rem;
     margin: 0;
+    font: var(--font-caption);
   }
 
   &:hover .button__arrowleft {
@@ -245,8 +257,8 @@ export default function Volume({
               router.push("/volumes/" + next);
             }}
           >
-            <p className="prev">
-              <span>Previous Volume</span>
+            <p className="next">
+              <span>Next Volume</span>
               <h3>{slugToTitle(next)}</h3>
             </p>
             <svg

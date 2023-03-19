@@ -7,9 +7,15 @@ const lora = Lora({
 });
 
 const theme = {
-  colorEarth: "#282828",
-  colorClouds: "#f1f1f1",
-  colorSmoke: "#d4d1cd",
+  color1: "#282828",
+  color2: "#f1f1f1",
+  color3: "#d4d1cd",
+};
+
+const themeDark = {
+  color1: "#d4d1cd",
+  color2: "#282828",
+  color3: "#d4d1cd",
 };
 
 export default createGlobalStyle`
@@ -17,18 +23,25 @@ export default createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+    margin: 0;
+    
   }
 
   body {
+    background-color: ${({ darkMode }) =>
+      darkMode ? themeDark.color2 : theme.color2};
     margin: 0;
     font-family: var(--font-family);
   }
 
   :root {
   /* Color styles */
-  --color-earth: ${() => theme.colorEarth};
-  --color-clouds: ${() => theme.colorClouds};
-  --color-smoke: ${() => theme.colorSmoke};
+  --color-earth: ${({ darkMode }) =>
+    darkMode ? themeDark.color1 : theme.color1};
+  --color-clouds: ${({ darkMode }) =>
+    darkMode ? themeDark.color2 : theme.color2};
+  --color-smoke: ${({ darkMode }) =>
+    darkMode ? themeDark.color3 : theme.color3};
 
   /* Font styles */
   --font-family: ${lora.style.fontFamily}, serif;
