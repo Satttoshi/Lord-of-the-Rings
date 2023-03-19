@@ -1,8 +1,6 @@
 import { volumes } from "../../lib/data";
-import Volume from "../../components/Volume";
+import Volume from "../../components/volume";
 import { useRouter } from "next/router";
-
-import styled, { css } from "styled-components";
 
 export default function Volume1Page() {
   const router = useRouter();
@@ -19,19 +17,14 @@ export default function Volume1Page() {
   console.log(color);
 
   return (
-    <StyledBackground color={color}>
-      <Volume
-        title={title}
-        description={description}
-        imageLink={cover}
-        books={books}
-        prev={prev}
-        next={next}
-      />
-    </StyledBackground>
+    <Volume
+      title={title}
+      description={description}
+      imageLink={cover}
+      books={books}
+      prev={prev}
+      next={next}
+      color={color}
+    />
   );
 }
-
-const StyledBackground = styled.div`
-  background-color: ${({ color }) => color};
-`;
