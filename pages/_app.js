@@ -2,15 +2,13 @@ import DarkModeSwitch from "../components/dark-mode-switch";
 import GlobalStyle from "../styles";
 import { ThemeProvider } from "styled-components";
 
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import useLocalStorageState from "use-local-storage-state";
 
 export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useLocalStorageState("darkMode", {
     defaultValue: false,
   });
-
-  console.log(darkMode);
 
   function handleDarkMode() {
     setDarkMode(!darkMode);

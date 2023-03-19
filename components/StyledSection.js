@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components";
 
 const StyledSection = styled.section`
-  background-color: ${({ color }) => color};
+  background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 0.15)
+    ),
+    ${({ color }) => color};
   display: flex;
   justify-content: center;
   align-items: center;
