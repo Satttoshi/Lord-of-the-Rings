@@ -1,37 +1,11 @@
-import { createGlobalStyle } from "styled-components";
-import { Lora } from "@next/font/google";
-
-const lora = Lora({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-});
-
-const theme = {
-  colorEarth: "#282828",
-  colorClouds: "#f1f1f1",
-  colorSmoke: "#d4d1cd",
-};
-
-export default createGlobalStyle`
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: var(--font-family);
-  }
-
-  :root {
+:root {
   /* Color styles */
-  --color-earth: ${() => theme.colorEarth};
-  --color-clouds: ${() => theme.colorClouds};
-  --color-smoke: ${() => theme.colorSmoke};
+  --color-earth: #282828;
+  --color-clouds: #f1f1f1;
+  --color-smoke: #d4d1cd;
 
   /* Font styles */
-  --font-family: ${lora.style.fontFamily}, serif;
+  --font-family: serif;
   /*
     use like:
     font: var(--font-body);
@@ -56,4 +30,3 @@ export default createGlobalStyle`
     0 8px 7px -4px rgba(0, 0, 0, 0.09), 0 17px 11px -8px rgba(0, 0, 0, 0.09),
     0 24px 15px -12px rgba(0, 0, 0, 0.09), 0 4px 15px 0 rgba(0, 0, 0, 0.05);
 }
-`;
