@@ -34,7 +34,7 @@ const StyledSvg = styled.svg`
 `;
 
 export default function DarkModeSwitch({ onDarkMode, darkMode }) {
-  const { theme, resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <StyledButton
