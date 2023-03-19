@@ -11,6 +11,7 @@ const StyledButton = styled.button`
   background-color: transparent;
   outline: none;
   color: var(--color-earth);
+  transition: color 0.3s ease-out;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -45,6 +46,7 @@ const StyledArticle = styled.article`
   flex-direction: column;
   padding: 0 40px;
   color: var(--color-earth);
+  transition: color 0.3s ease-out;
 
   h1 {
     margin: 0;
@@ -95,6 +97,7 @@ const StyledNavButton = styled.button`
   background-color: transparent;
   outline: none;
   color: var(--color-earth);
+  transition: color 0.3s ease-out;
   cursor: pointer;
   display: flex;
   align-items: center;

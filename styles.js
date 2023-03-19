@@ -32,6 +32,7 @@ export default createGlobalStyle`
       darkMode ? themeDark.color2 : theme.color2};
     margin: 0;
     font-family: var(--font-family);
+    transition: background-color 0.3s ease-out;
   }
 
   :root {

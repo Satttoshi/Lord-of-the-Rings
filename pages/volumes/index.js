@@ -5,13 +5,10 @@ import { uid } from "uid";
 import styled, { css } from "styled-components";
 import Image from "next/image";
 
-function getRandomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
-}
-
 const StyledMain = styled.main`
-  padding: 50px 35px;
+  padding: 0px 35px;
   color: var(--color-earth);
+  transition: color 0.3s ease-out;
 
   h1 {
     font: var(--font-headline-1);
@@ -65,8 +62,6 @@ const StyledList = styled.ul`
 export default function VolumePage() {
   const router = useRouter();
 
-  const randomMovie = getRandomElement(volumes); // randomize movie list
-
   return (
     <StyledMain>
       <h1>The Lord of the Rings</h1>
@@ -89,14 +84,6 @@ export default function VolumePage() {
           );
         })}
       </StyledList>
-      <button
-        type="button"
-        onClick={() => {
-          router.push("/volumes/" + randomMovie.slug);
-        }}
-      >
-        Random Movie
-      </button>
     </StyledMain>
   );
 }
